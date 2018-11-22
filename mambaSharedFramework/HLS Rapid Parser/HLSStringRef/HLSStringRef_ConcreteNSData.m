@@ -39,7 +39,7 @@
 }
 
 - (instancetype)initWithURL:(NSURL *)url {
-    return self = [self initWithData:url.absoluteURL.dataRepresentation];
+    return self = [self initWithData: [url.absoluteURL.relativeString dataUsingEncoding: NSUTF8StringEncoding]];
 }
 
 - (instancetype)initWithHLSStringRef:(HLSStringRef *)relativeURL relativeToURL:(NSURL *)baseUrl {
